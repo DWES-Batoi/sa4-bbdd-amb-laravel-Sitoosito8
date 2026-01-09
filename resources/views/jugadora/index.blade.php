@@ -20,6 +20,8 @@
       <th class="border border-gray-300 p-2">Nom</th>
       <th class="border border-gray-300 p-2">Equip</th>
       <th class="border border-gray-300 p-2">Dorsal</th>
+      <th class="border border-gray-300 p-2">Nacimiento</th>
+      <th class="border border-gray-300 p-2">Foto</th>
     </tr>
   </thead>
   <tbody>
@@ -31,8 +33,16 @@
         </a>
       </td>
       
-      <td class="border border-gray-300 p-2">{{ $jugadora->dorsal}}</td>
       <td class="border border-gray-300 p-2">{{ $jugadora->equip->nom ?? '-' }}</td>
+      <td class="border border-gray-300 p-2">{{ $jugadora->dorsal}}</td>
+      <td class="border border-gray-300 p-2">{{ $jugadora->data_naixement}}</td>
+      <td class="border border-gray-300 p-2">
+        @if($jugadora->foto)
+          <img src="{{ asset('storage/fotos/' . $jugadora->foto) }}" alt="{{ $jugadora->nom }}" class="h-16 w-16 object-cover rounded">
+        @else
+          Sin foto
+        @endif
+      </td>
     </tr>
   @endforeach
   </tbody>
