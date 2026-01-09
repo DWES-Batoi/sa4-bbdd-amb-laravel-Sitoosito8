@@ -1,4 +1,4 @@
-SHELL := /bin/bash
+owSHELL := /bin/bash
 .PHONY: up down reset sh logs install migrate test artisan
 up:
 	docker compose up -d --build
