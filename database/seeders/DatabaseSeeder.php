@@ -15,7 +15,8 @@ class DatabaseSeeder extends Seeder
         $this->call([
             EstadisSeeder::class,
             EquipsSeeder::class,
-            JugadoraSeeder::class
+            JugadoraSeeder::class,
+            PartitSeeder::class
         ]);
 
         // Opcional: per veure que acaba

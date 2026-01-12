@@ -7,6 +7,7 @@
 
     <li><a class="text-white hover:underline" href="{{ route('estadis.index') }}">Llistat d'Estadis</a></li>
     <li><a class="text-white hover:underline" href="{{ route('equips.index') }}">Llistat d'Equips</a></li>
-    <li><a class="text-white hover:underline" href="{{ route('jugadora.index') }}">Llistat d'Jugadoras</a></li>
+    <li><a class="text-white hover:underline" href="{{ route('jugadora.index') }}">Llistat de Jugadoras</a></li>
+        <li><a class="text-white hover:underline" href="{{ route('partit.index') }}">Llistat de partits</a></li>
   </ul>
 </nav>

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PartitsController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EstadiController;
 use App\Http\Controllers\EquipController;
@@ -10,5 +11,6 @@ Route::get('/', function () {
 });
 
 Route::resource('/estadis', EstadiController::class);
-Route::resource('/equips', EquipController::class);
+Route::resource('equips', EquipController::class);
 Route::resource('/jugadora', JugadoraController::class);
+Route::resource('/partit', PartitsController::class);
