@@ -45,7 +45,8 @@ class JugadoraController extends Controller
     // GET /jugadora/{Jugadora}/edit
     public function edit(Jugadora $jugadora)
     {
-        return view('jugadora.edit', compact('jugadora'));
+        $equips = Equip::all();
+        return view('jugadora.edit', compact('jugadora','equips'));
     }
 
     // PUT /jugadora/{Jugadora}

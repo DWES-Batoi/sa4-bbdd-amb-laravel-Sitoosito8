@@ -37,7 +37,7 @@
       type="date"
       name="data"
       id="data"
-      value="{{ old('data', $partit->data->format('Y-m-d')) }}"
+      value="{{ old('data', \Carbon\Carbon::parse($partit->data)->format('Y-m-d')) }}"
       class="border p-2 w-full"
     >
   </div>
