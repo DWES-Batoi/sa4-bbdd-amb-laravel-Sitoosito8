@@ -14,7 +14,7 @@
   </div>
 @endif
 
-<form action="{{ route('jugadoras.store') }}" method="POST" class="space-y-4">
+<form action="{{ route('jugadora.store') }}" method="POST" enctype="multipart/form-data" class="space-y-4">
   @csrf
 
   <div>
@@ -29,24 +29,42 @@
   </div>
 
   <div>
-    <label for="equip" class="block font-bold">Equip:</label>
-    <input
-      type="text"
-      name="equip"
-      id="equip"
-      value="{{ old('equip') }}"
-      class="border p-2 w-full"
-    >
+    <label for="equip_id" class="block font-bold">Equip:</label>
+    <select name="equip_id" id="equip_id" class="border p-2 w-full">
+      @foreach($equips as $equip)
+        <option value="{{ $equip->id }}" @selected(old('equip_id') == $equip->id)>{{ $equip->nom }}</option>
+      @endforeach
+    </select>
   </div>
+
   <div>
-    <label for="dorsal" class="block font-bold">Equip:</label>
+    <label for="dorsal" class="block font-bold">Dorsal (opcional):</label>
     <input
-      type="text"
+      type="number"
       name="dorsal"
       id="dorsal"
       value="{{ old('dorsal') }}"
       class="border p-2 w-full"
     >
+  </div>
+
+  <div>
+    <label for="data_naixement" class="block font-bold">Data de naixement:</label>
+    <input
+      type="date"
+      name="data_naixement"
+      id="data_naixement"
+      value="{{ old('data_naixement') }}"
+      class="border p-2 w-full"
+    >
+  </div>
+
+  <div>
+    <label for="foto" class="block font-bold">Foto (opcional):</label>
+    <input type="file" name="foto" id="foto" class="border p-2 w-full">
+    @error('foto')
+      <p class="text-red-600 text-sm mt-1">{{ $message }}</p>
+    @enderror
   </div>
 
   <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded">

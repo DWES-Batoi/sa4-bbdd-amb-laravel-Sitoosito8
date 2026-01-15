@@ -26,7 +26,7 @@ class StoreEquipRequest extends FormRequest
             'nom'       => 'required|min:3|unique:equips,nom',
             'estadi_id' => 'required|integer|exists:estadis,id',
             'titols'    => 'required|integer|min:0',
-            'escut' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
+            'escut' => 'nullable|image|mimes:jpeg,png,jpg|max:12000',
         ];
     }
 }

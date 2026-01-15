@@ -32,7 +32,7 @@ class JugadoraController extends Controller
     // POST /jugadora
     public function store(StoreJugadoraRequest $request)
     {
-        $this->servei->guardar($request->validated());
+        $this->servei->guardar($request->validated(), $request->file('foto'));
         return redirect()->route('jugadora.index')->with('success', 'Jugadora creat correctament!');
     }
 
@@ -52,7 +52,7 @@ class JugadoraController extends Controller
     // PUT /jugadora/{Jugadora}
     public function update(UpdateJugadoraRequest $request, Jugadora $jugadora)
     {
-        $this->servei->actualitzar($jugadora->id, $request->validated());
+        $this->servei->actualitzar($jugadora->id, $request->validated(), $request->file('foto'));
         return redirect()->route('jugadora.index')->with('success', value: 'Jugadora actualitzat correctament!');
         ;
     }
