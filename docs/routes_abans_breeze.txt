@@ -1,0 +1,35 @@
+
+  GET|HEAD        / ......................................................................................................................................... 
+  GET|HEAD        equips ............................................................................................... equips.index › EquipController@index
+  POST            equips ............................................................................................... equips.store › EquipController@store
+  GET|HEAD        equips/create ...................................................................................... equips.create › EquipController@create
+  GET|HEAD        equips/{equip} ......................................................................................... equips.show › EquipController@show
+  PUT|PATCH       equips/{equip} ..................................................................................... equips.update › EquipController@update
+  DELETE          equips/{equip} ................................................................................... equips.destroy › EquipController@destroy
+  GET|HEAD        equips/{equip}/edit .................................................................................... equips.edit › EquipController@edit
+  GET|HEAD        estadis ............................................................................................ estadis.index › EstadiController@index
+  POST            estadis ............................................................................................ estadis.store › EstadiController@store
+  GET|HEAD        estadis/create ................................................................................... estadis.create › EstadiController@create
+  GET|HEAD        estadis/{estadi} ..................................................................................... estadis.show › EstadiController@show
+  PUT|PATCH       estadis/{estadi} ................................................................................. estadis.update › EstadiController@update
+  DELETE          estadis/{estadi} ............................................................................... estadis.destroy › EstadiController@destroy
+  GET|HEAD        estadis/{estadi}/edit ................................................................................ estadis.edit › EstadiController@edit
+  GET|HEAD        jugadora ........................................................................................ jugadora.index › JugadoraController@index
+  POST            jugadora ........................................................................................ jugadora.store › JugadoraController@store
+  GET|HEAD        jugadora/create ............................................................................... jugadora.create › JugadoraController@create
+  GET|HEAD        jugadora/{jugadora} ............................................................................... jugadora.show › JugadoraController@show
+  PUT|PATCH       jugadora/{jugadora} ........................................................................... jugadora.update › JugadoraController@update
+  DELETE          jugadora/{jugadora} ......................................................................... jugadora.destroy › JugadoraController@destroy
+  GET|HEAD        jugadora/{jugadora}/edit .......................................................................... jugadora.edit › JugadoraController@edit
+  GET|HEAD        partit ............................................................................................. partit.index › PartitsController@index
+  POST            partit ............................................................................................. partit.store › PartitsController@store
+  GET|HEAD        partit/create .................................................................................... partit.create › PartitsController@create
+  GET|HEAD        partit/{partit} ...................................................................................... partit.show › PartitsController@show
+  PUT|PATCH       partit/{partit} .................................................................................. partit.update › PartitsController@update
+  DELETE          partit/{partit} ................................................................................ partit.destroy › PartitsController@destroy
+  GET|HEAD        partit/{partit}/edit ................................................................................. partit.edit › PartitsController@edit
+  GET|HEAD        storage/{path} .............................................................................................................. storage.local
+  GET|HEAD        up ........................................................................................................................................ 
+
+                                                                                                                                          Showing [31] routes
+
