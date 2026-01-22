@@ -1,10 +1,10 @@
 @extends('layouts.equip')
 
-@section('title', 'Listado de Equipos')
+@section('title', __('Equips'))
 
 @section('content')
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <h1 class="text-3xl font-bold text-green-700 mb-6">Listado de Equipos</h1>
+    <h1 class="text-3xl font-bold text-green-700 mb-6">{{ __('Llistat d\'equips') }}</h1>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         @foreach ($equips as $equip)
@@ -20,20 +20,20 @@
                         >
                     @endif
                     <h2 class="text-xl font-bold">{{ $equip->nom }}</h2>
-                    <span class="text-sm text-gray-500">ID: {{ $equip->id }}</span>
+                    <span class="text-sm text-gray-500">{{ __('ID') }}: {{ $equip->id }}</span>
                 </div>
 
                 <!-- Información del equipo -->
                 <div>
-                    <p><strong>Ciudad:</strong> {{ $equip->ciutat ?? '—' }}</p>
-                    <p><strong>Estadio:</strong> {{ $equip->estadi->nom ?? '—' }}</p>
-                    <p><strong>Edat mitjana jugadoras:</strong> {{ $equip->edadMediaJugadoras() ?? '—' }} anys</p>
+                    <p><strong>{{ __('Ciutat') }}:</strong> {{ $equip->ciutat ?? '—' }}</p>
+                    <p><strong>{{ __('Estadi') }}:</strong> {{ $equip->estadi->nom ?? '—' }}</p>
+                    <p><strong>{{ __('Edat mitjana jugadoras:') }}</strong> {{ $equip->edadMediaJugadoras() ?? '—' }} {{ __('anys') }}</p>
 
                     <div class="mt-2">
-                        <strong>Últims 5 partits:</strong>
+                        <strong>{{ __('Últims 5 partits') }}:</strong>
                         @php $ultims = $equip->ultimsPartits() @endphp
                         @if($ultims->isEmpty())
-                            <p>No hi ha partits registrats.</p>
+                            <p>{{ __('No hi ha partits registrats.') }}</p>
                         @else
                             <ul class="list-disc pl-5">
                                 @foreach($ultims as $partit)
@@ -51,12 +51,12 @@
 
                 <!-- Footer con acciones -->
                 <footer class="mt-4 flex flex-wrap gap-2 justify-center">
-                    <a href="{{ route('equips.show', $equip) }}" class="text-blue-600 hover:underline">Ver</a>
-                    <a href="{{ route('equips.edit', $equip) }}" class="text-yellow-600 hover:underline">Editar</a>
-                    <form method="POST" action="{{ route('equips.destroy', $equip) }}" onsubmit="return confirm('Segur que vols eliminar aquest equip?');">
+                    <a href="{{ route('equips.show', $equip) }}" class="text-blue-600 hover:underline">{{ __('Veure') }}</a>
+                    <a href="{{ route('equips.edit', $equip) }}" class="text-yellow-600 hover:underline">{{ __('Editar') }}</a>
+                    <form method="POST" action="{{ route('equips.destroy', $equip) }}" onsubmit="return confirm({{ __('Segur que vols eliminar aquest equip?') }});">
                         @csrf
                         @method('DELETE')
-                        <button type="submit" class="text-red-600 hover:underline">Eliminar</button>
+                        <button type="submit" class="text-red-600 hover:underline">{{ __('Eliminar') }}</button>
                     </form>
                 </footer>
             </div>

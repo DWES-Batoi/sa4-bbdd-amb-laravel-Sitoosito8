@@ -40,3 +40,5 @@ artisan:
 	@sudo chown -R $(shell id -u):$(shell id -g) .
 	@true
 
+composer:
+	docker compose exec app composer $(CMD)

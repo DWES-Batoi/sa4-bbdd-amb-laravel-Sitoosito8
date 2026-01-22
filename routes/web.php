@@ -6,10 +6,22 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\EquipController;
 use App\Http\Controllers\EstadiController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Session;
 
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/locale/{locale}', function (string $locale) {
+    $available = ['ca', 'es', 'en'];
+
+    if (!in_array($locale, $available, true)) {
+        $locale = config('app.fallback_locale', 'en');
+    }
+
+    Session::put('locale', $locale);
+
+    return redirect()->back();
+})->name('setLocale');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
